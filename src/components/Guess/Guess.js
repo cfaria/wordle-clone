@@ -2,12 +2,14 @@ import React from "react";
 
 import { range } from  '../../utils';
 
-function Guess(guessText) {  
-  console.log(guessText);
+function Guess({guess}) {  
+  if(guess.length === 0) {
+    guess = '     ';
+  }
   return <p className="guess">
       {        
-        range(guessText.length).map((num) => (        
-        <span className="cell" key={num}></span>
+        range(guess.length).map((num) => (        
+        <span className="cell" key={num}>{guess[num]}</span>
       ))}
   </p>;
 }
