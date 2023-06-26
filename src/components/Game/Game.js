@@ -23,12 +23,11 @@ function Game() {
     if(success) {
       break;
     }
-  }
-  
-  console.log(guessResults);
+  }  
 
   return <>    
     <GuessResults items={guessResults} answer={answer} />
+    
     { (! success && guessResults.length < NUM_OF_GUESSES_ALLOWED )  &&
       <WordInput guessResults={guessResults} setGuessResults={setGuessResults} />
     }
